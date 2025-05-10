@@ -157,13 +157,6 @@ class VllmResponseGenerator(ResponseGenerator):
 ######## Main ########
 
 SUPPORTED_MODELS = {
-    # @@@ahoaho XXX
-    'granite-3.1-8b-lab-v1': 'vllm',
-    'granite-3.1-8b-lab-v1-3epochs': 'vllm',
-    'granite-3.1-8b-lab-v2_rev-2': 'vllm',
-    'granite-3.1-8b-lab-v2_rev-2-3epochs': 'vllm',
-    'granite-3.3-8b-instruct': 'vllm',
-    'granite-3.3-8b-instruct-3epochs': 'vllm',
     'gpt-4o-mini-2024-07-18': 'openai',
     'gpt-4o-2024-08-06': 'openai',
     'o1-preview-2024-09-12': 'openai',

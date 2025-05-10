@@ -162,3 +162,13 @@ cython_debug/
 #.idea/
 
 .DS_Store
+
+# added by takeuchi
+/data*
+/evaluations*
+/checkpoints*
+/experiments*
+/openai-test.py*
+/granite*
+/Phi*
+/phi*
