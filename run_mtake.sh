@@ -17,7 +17,7 @@ echo "XXX LOGFILE ${LOGFILE}" | tee -a ${LOGFILE}
 echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 
 declare -a LANGS=("en" "es" "fr" "ja")
-declare -a MODELS=("granite-3.1-8b-lab-v1" "granite-3.1-8b-lab-v1-3epochs" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v2_rev-2-3epochs" "ibm-granite/granite-3.3-8b-instruct" "granite-3.3-8b-instruct-3epochs")
+declare -a MODELS=("ibm-granite/granite-3.3-8b-instruct" "granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1" "granite-3.1-8b-lab-v1-3epochs")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
