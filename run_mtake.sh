@@ -16,8 +16,10 @@ LOGFILE="${BASENAME}-${START_TIME_STR}-${HOSTNAME_S}.log"
 echo "XXX LOGFILE ${LOGFILE}" | tee -a ${LOGFILE}
 echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 
-declare -a LANGS=("en" "es" "fr" "ja")
-declare -a MODELS=("ibm-granite/granite-3.3-8b-instruct" "granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1" "granite-3.1-8b-lab-v1-3epochs")
+LANGS=("en" "es" "fr" "ja")
+MODELS=()
+#MODELS+=("ibm-granite/granite-3.3-8b-instruct" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1" "microsoft/phi-4")
+MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
