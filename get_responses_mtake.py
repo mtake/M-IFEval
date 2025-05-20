@@ -158,13 +158,13 @@ class VllmResponseGenerator(ResponseGenerator):
 
 SUPPORTED_MODELS = {
     # @@@ahoaho XXX
-    'granite-3.1-8b-lab-v1': 'vllm',
-    'granite-3.1-8b-lab-v1-3epochs': 'vllm',
-    'granite-3.1-8b-lab-v2_rev-2': 'vllm',
-    'granite-3.1-8b-lab-v2_rev-2-3epochs': 'vllm',
-    'ibm-granite/granite-3.3-8b-instruct': 'vllm',
-    'granite-3.3-8b-instruct-3epochs': 'vllm',
-    'microsoft/phi-4': 'vllm',
+    # 'granite-3.1-8b-lab-v1': 'vllm',
+    # 'granite-3.1-8b-lab-v1-3epochs': 'vllm',
+    # 'granite-3.1-8b-lab-v2_rev-2': 'vllm',
+    # 'granite-3.1-8b-lab-v2_rev-2-3epochs': 'vllm',
+    # 'ibm-granite/granite-3.3-8b-instruct': 'vllm',
+    # 'granite-3.3-8b-instruct-3epochs': 'vllm',
+    # 'microsoft/phi-4': 'vllm',
     'gpt-4o-mini-2024-07-18': 'openai',
     'gpt-4o-2024-08-06': 'openai',
     'o1-preview-2024-09-12': 'openai',
@@ -204,13 +204,18 @@ if __name__ == "__main__":
 
     model_name = args.model_name
 
-    assert model_name in SUPPORTED_MODELS, f"Model {model_name} not supported, update SUPPORTED_MODELS dictionary in get_responses.py to support it."
+    # @@@ahoaho XXX
+    # assert model_name in SUPPORTED_MODELS, f"Model {model_name} not supported, update SUPPORTED_MODELS dictionary in get_responses.py to support it."
+    if SUPPORTED_MODELS.get(model_name) is None:
+        print(f"Model {model_name} is not in SUPPORTED_MODELS dictionary. Default to vllm.")
 
     # @@@ahoaho XXX
     # paths = sorted(glob("./data/*_input_data.jsonl"))
     paths = sorted(glob("./data_mtake/*_input_data.jsonl"))
 
-    model_class = MODEL_CLASS_DICT[SUPPORTED_MODELS[model_name]]
+    # @@@ahoaho XXX
+    # model_class = MODEL_CLASS_DICT[SUPPORTED_MODELS[model_name]]
+    model_class = MODEL_CLASS_DICT[SUPPORTED_MODELS.get(model_name, "vllm")]
     response_generator = model_class(model_name)
 
     for path in paths:
