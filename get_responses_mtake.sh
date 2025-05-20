@@ -18,7 +18,9 @@ LOGFILE="${BASENAME}-${START_TIME_STR}-${HOSTNAME_S}.log"
 echo "XXX LOGFILE ${LOGFILE}" | tee -a ${LOGFILE}
 echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 
-declare -a MODELS=("ibm-granite/granite-3.3-8b-instruct" "granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1" "granite-3.1-8b-lab-v1-3epochs")
+MODELS=()
+#MODELS+=("ibm-granite/granite-3.3-8b-instruct" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1" "microsoft/phi-4")
+MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 
 for m in "${MODELS[@]}"; do
     THIS_START_TIME="$(${DATE_CMD} +%s)"
