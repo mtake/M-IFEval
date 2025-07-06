@@ -21,7 +21,8 @@ echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 MODELS=()
 #MODELS+=("ibm-granite/granite-3.3-8b-instruct" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1" "microsoft/phi-4")
 #MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
-MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
+#MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
+MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
 
 for m in "${MODELS[@]}"; do
     THIS_START_TIME="$(${DATE_CMD} +%s)"
