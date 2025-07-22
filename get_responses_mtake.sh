@@ -23,7 +23,14 @@ MODELS=()
 #MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 #MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
 #MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
-MODELS+=("granite-3.3-8b-instruct-jfe-technical-report_r5-interp" "granite-3.3-8b-instruct-jfe-technical-report_r5")
+#MODELS+=("granite-3.3-8b-instruct-jfe-technical-report_r5-interp" "granite-3.3-8b-instruct-jfe-technical-report_r5")
+MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
+#MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
+
+ENV=""
+#ENV="TOKENIZERS_PARALLELISM=false ${ENV}"
+#ENV="PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True ${ENV}"
+#ENV="NCCL_DEBUG=INFO ${ENV}"
 
 for m in "${MODELS[@]}"; do
     THIS_START_TIME="$(${DATE_CMD} +%s)"
@@ -31,8 +38,8 @@ for m in "${MODELS[@]}"; do
     echo "XXX THIS_DATETIME ${THIS_START_TIME_STR}" | tee -a ${LOGFILE}
 
     # @@@ahoaho XXX
-    # cmd="python get_responses.py --model_name ${m}"
-    cmd="python get_responses_mtake.py --model_name ${m}"
+    # cmd="${ENV}python get_responses.py --model_name ${m}"
+    cmd="${ENV}python get_responses_mtake.py --model_name ${m}"
     echo "$cmd" | tee -a ${LOGFILE}
     eval "$cmd" 2>&1 | tee -a ${LOGFILE}
 

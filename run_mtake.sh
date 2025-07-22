@@ -22,7 +22,9 @@ MODELS=()
 #MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 #MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
 #MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
-MODELS+=("granite-3.3-8b-instruct-jfe-technical-report_r5-interp" "granite-3.3-8b-instruct-jfe-technical-report_r5")
+#MODELS+=("granite-3.3-8b-instruct-jfe-technical-report_r5-interp" "granite-3.3-8b-instruct-jfe-technical-report_r5")
+MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
+#MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
