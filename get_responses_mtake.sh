@@ -29,8 +29,7 @@ MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
 
 ENV=""
 #ENV="TOKENIZERS_PARALLELISM=false ${ENV}"
-#ENV="PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True ${ENV}"
-#ENV="NCCL_DEBUG=INFO ${ENV}"
+ENV="PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True ${ENV}"
 
 for m in "${MODELS[@]}"; do
     THIS_START_TIME="$(${DATE_CMD} +%s)"
