@@ -30,6 +30,7 @@ MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
 ENV=""
 #ENV="TOKENIZERS_PARALLELISM=false ${ENV}"
 ENV="PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True ${ENV}"
+#ENV="VLLM_WORKER_MULTIPROC_METHOD=spawn ${ENV}" # @@@ahoaho XXX WIP
 
 for m in "${MODELS[@]}"; do
     THIS_START_TIME="$(${DATE_CMD} +%s)"
