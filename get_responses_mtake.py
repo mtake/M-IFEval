@@ -142,8 +142,13 @@ class VllmResponseGenerator(ResponseGenerator):
         self.model_name = model_name
         # @@@ahoaho XXX
         # self.llm = LLM(model=self.model_name, max_model_len=os.environ.get("MAX_MODEL_LEN", 4096))
-        # NOTE see _check_if_gpu_supports_dtype() in vllm/worker/worker.py
         from vllm.platforms import current_platform
+        # NOTE for multi-gpu inference
+        if current_platform.is_cuda():
+            tensor_parallel_size = current_platform.device_count()
+        else:
+            tensor_parallel_size = 1
+        # NOTE see _check_if_gpu_supports_dtype() in vllm/worker/worker.py
         if not current_platform.has_device_capability(80):
             capability = current_platform.get_device_capability()
             gpu_name = current_platform.get_device_name()
@@ -161,7 +166,7 @@ class VllmResponseGenerator(ResponseGenerator):
             dtype = "float16"
         else:
             dtype = "auto"
-        self.llm = LLM(model=self.model_name, dtype=dtype, max_model_len=os.environ.get("MAX_MODEL_LEN", 4096))
+        self.llm = LLM(model=self.model_name, tensor_parallel_size=tensor_parallel_size, dtype=dtype, max_model_len=os.environ.get("MAX_MODEL_LEN", 4096))
         self.sampling_params = SamplingParams(temperature=0.0, max_tokens=2048)
 
     def get_response(self, input_texts):
