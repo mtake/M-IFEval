@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+if command -v nvidia-smi >/dev/null 2>&1; then
+    NGPUS=$(nvidia-smi --list-gpus | wc -l)
+else
+    NGPUS=0
+fi
+echo "NGPUS: ${NGPUS}"
+exit 0
+
 # for macOS
 if command -v gdate &> /dev/null
 then
@@ -24,7 +32,8 @@ MODELS=()
 #MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
 #MODELS+=("granite-3.3-8b-instruct-jfe-technical-report_r5-interp" "granite-3.3-8b-instruct-jfe-technical-report_r5")
 #MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
-MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
+#MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
+MODELS+=("mistralai/Mistral-Small-3.2-24B-Instruct-2506")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
