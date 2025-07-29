@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
+#
 # Run on a Linux machine with GPU
+#
 
 # for macOS
 if command -v gdate &> /dev/null
@@ -19,7 +21,9 @@ echo "XXX LOGFILE ${LOGFILE}" | tee -a ${LOGFILE}
 echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 
 MODELS=()
-#MODELS+=("ibm-granite/granite-3.3-8b-instruct" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1" "microsoft/phi-4")
+#MODELS+=("microsoft/phi-4")
+#MODELS+=("ibm-granite/granite-3.3-8b-instruct")
+#MODELS+=("granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1")
 #MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 #MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
 #MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
@@ -27,6 +31,7 @@ MODELS=()
 #MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
 MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")  # 2 GPUs
 #MODELS+=("mistralai/Mistral-Small-3.2-24B-Instruct-2506")  # 2 GPUs. WIP need special flags to vLLM
+#MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-interp" "granite-3.3-8b-instruct_teigaku-genzei")
 
 ENV=""
 #ENV="TOKENIZERS_PARALLELISM=false ${ENV}"

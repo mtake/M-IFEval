@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-if command -v nvidia-smi >/dev/null 2>&1; then
-    NGPUS=$(nvidia-smi --list-gpus | wc -l)
-else
-    NGPUS=0
-fi
-echo "NGPUS: ${NGPUS}"
-exit 0
-
 # for macOS
 if command -v gdate &> /dev/null
 then
@@ -26,7 +18,9 @@ echo "XXX DATETIME ${START_TIME_STR}" | tee -a ${LOGFILE}
 
 LANGS=("en" "es" "fr" "ja")
 MODELS=()
-#MODELS+=("ibm-granite/granite-3.3-8b-instruct" "granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1" "microsoft/phi-4")
+#MODELS+=("microsoft/phi-4")
+#MODELS+=("ibm-granite/granite-3.3-8b-instruct")
+#MODELS+=("granite-3.1-8b-lab-v2_rev-2" "granite-3.1-8b-lab-v1")
 #MODELS+=("granite-3.3-8b-instruct-3epochs" "granite-3.1-8b-lab-v2_rev-2-3epochs" "granite-3.1-8b-lab-v1-3epochs")
 #MODELS+=("granite-3.3-8b-instruct-teigaku-genzei-interp")
 #MODELS+=("granite-3.3-8b-instruct-ibm-newsroom-d5-x100-interp" "granite-3.3-8b-instruct-ibm-newsroom-d5-x100")
@@ -34,6 +28,7 @@ MODELS=()
 #MODELS+=("granite-4.0-tiny-prerelease-greylock-r250721a")
 MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
 #MODELS+=("mistralai/Mistral-Small-3.2-24B-Instruct-2506")
+#MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-interp" "granite-3.3-8b-instruct_teigaku-genzei")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
