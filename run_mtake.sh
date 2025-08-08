@@ -29,7 +29,8 @@ MODELS=()
 #MODELS+=("granite-4.0-small-prerelease-greylock-r250721a")
 #MODELS+=("mistralai/Mistral-Small-3.2-24B-Instruct-2506")
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-interp" "granite-3.3-8b-instruct_teigaku-genzei")
-MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl-interp" "granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl")
+#MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl-interp" "granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl")
+MODELS+=("openai/gpt-oss-20b")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
