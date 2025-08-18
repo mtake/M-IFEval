@@ -33,7 +33,8 @@ MODELS=()
 #MODELS+=("mistralai/Mistral-Small-3.2-24B-Instruct-2506")  # 2 GPUs. WIP need special flags to vLLM
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-interp" "granite-3.3-8b-instruct_teigaku-genzei")
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl-interp" "granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl")
-MODELS+=("openai/gpt-oss-20b")
+#MODELS+=("openai/gpt-oss-20b")
+MODELS+=("openai/gpt-oss-120b")  # WIP
 
 ENV=""
 #ENV="TOKENIZERS_PARALLELISM=false ${ENV}"
