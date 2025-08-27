@@ -34,7 +34,8 @@ MODELS=()
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-interp" "granite-3.3-8b-instruct_teigaku-genzei")
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl-interp" "granite-3.3-8b-instruct_teigaku-genzei-ibm_generic_tmpl")
 #MODELS+=("openai/gpt-oss-20b")
-MODELS+=("openai/gpt-oss-120b")
+#MODELS+=("openai/gpt-oss-120b")
+MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-sdg_hub_v0.2-interp" "granite-3.3-8b-instruct_teigaku-genzei-sdg_hub_v0.2")
 
 ENV=""
 #ENV="TOKENIZERS_PARALLELISM=false ${ENV}"
