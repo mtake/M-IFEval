@@ -39,8 +39,10 @@ MODELS=()
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm-v6_sft_interp_0.6" "granite-3.3-8b-instruct_teigaku-genzei-ibm-v6_sft_interp_0.7")  # v0.2
 #MODELS+=("granite-3.3-8b-instruct_teigaku-genzei-ibm-v6_osft_interp")  # v0.2
 #MODELS+=("ibm-granite/granite-4.0-h-small")
-#MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft")
-MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.6" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.7")
+#MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen")
+#MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen_interp_0.6" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen_interp_0.7")
+MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft")
+#MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.6" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.7")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
