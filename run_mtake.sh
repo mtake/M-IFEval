@@ -43,7 +43,8 @@ MODELS=()
 #MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen_interp_0.6" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-unfrozen_interp_0.7")
 #MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft")
 #MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.6" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft_interp_0.7")
-MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-frozen-auxloss_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-frozen-auxloss")
+#MODELS+=("granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-frozen-auxloss_interp" "granite-4.0-h-small_teigaku-genzei-ibm-v6_sft-frozen-auxloss")
+MODELS+=("openai/gpt-oss-20b" "gpt-oss-20b_teigaku-genzei-ibm-v6_sft_interp" "gpt-oss-20b_teigaku-genzei-ibm-v6_sft")
 
 # @@@ahoaho XXX
 #INPUT_DIR=./data
